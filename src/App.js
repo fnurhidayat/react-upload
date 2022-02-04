@@ -20,18 +20,20 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {isLoading(status)
-          ? (<p>Loading...</p>)
-          : (
-            <Fragment>
-              {!!value && <img src={value.url} alt="Just ordinary Image" />}
-              <form onSubmit={handleSubmit}>
-                <input type="file" onChange={(e) => setImage(e.target.files[0])} />
-                <input type="submit" value="UPLOAD" />
-              </form>
-            </Fragment>
-          )
-        }
+        {isLoading(status) ? (
+          <p>Loading...</p>
+        ) : (
+          <Fragment>
+            {!!value && <img src={value.url} alt="Just ordinary Image" />}
+            <form onSubmit={handleSubmit}>
+              <input
+                type="file"
+                onChange={(e) => setImage(e.target.files[0])}
+              />
+              <input type="submit" value="UPLOAD" />
+            </form>
+          </Fragment>
+        )}
       </header>
     </div>
   );
